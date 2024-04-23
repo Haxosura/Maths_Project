@@ -38,7 +38,7 @@ public class MoveToTarget : MonoBehaviour
     public void MoveToEvader()
     { 
         Gap = MyVector.SubtractVector(Evader, Pursuer);
-        Debug.Log(Gap.GetMegg());
+        //Debug.Log(Gap.GetMegg());
 
         if (Gap.GetMegg() >= Range)
         {

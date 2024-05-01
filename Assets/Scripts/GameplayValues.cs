@@ -46,7 +46,7 @@ public class GamePlayValues : MonoBehaviour
     {
         if (PlayerPoints >= MaxPoints)
         {
-            Debug.Log("EndGame");
+            Debug.Log("EndGame: Win");
         }
 
 
@@ -63,7 +63,7 @@ public class GamePlayValues : MonoBehaviour
                     if (Minutes <= 0)
                     {
                         TimerStart = false;
-                        Debug.Log("EndGame");
+                        Debug.Log("EndGame: Lose");
                     }
                     else
                     {

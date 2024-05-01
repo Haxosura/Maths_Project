@@ -21,7 +21,7 @@ public class RandomSpawner : MonoBehaviour
     {
         if (GamePlayValues.instance().PointsSpawned < 6)
         {
-            Debug.Log("Spawn");
+            Debug.Log("Spawn Point");
             Vector3 RandomSpawnPoint = new Vector3(
                 Random.Range(
                     AreaBounds.bounds.min.x,

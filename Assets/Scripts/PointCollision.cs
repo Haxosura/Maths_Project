@@ -5,7 +5,6 @@ using UnityEngine;
 
 [RequireComponent(typeof(PointAdd))]
 
-
 public class PointCollision : MonoBehaviour
 {
     PointAdd AddToPoints;

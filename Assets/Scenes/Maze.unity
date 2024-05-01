@@ -3293,6 +3293,7 @@ GameObject:
   - component: {fileID: 1065714006}
   - component: {fileID: 1065714005}
   - component: {fileID: 1065714009}
+  - component: {fileID: 1065714010}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -3315,11 +3316,11 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.25
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -3382,7 +3383,7 @@ Transform:
   m_GameObject: {fileID: 1065714004}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.7, y: 1.2, z: -37.8}
+  m_LocalPosition: {x: -28, y: 1.2, z: 37.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3403,7 +3404,19 @@ MonoBehaviour:
   Target: {fileID: 1467041199}
   MoveToVector: {x: 0, y: 0, z: 0}
   Speed: 5
-  Range: 1
+  Range: 1.1
+--- !u!114 &1065714010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065714004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 932880da78b7b5a46a542fa5fcf5ea3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1121084395
 GameObject:
   m_ObjectHideFlags: 0

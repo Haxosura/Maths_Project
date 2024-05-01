@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class MyVector
 {
-    // Workshop 1
-
     public float x, y, z;
     public float up;
 
@@ -25,8 +23,6 @@ public class MyVector
         rv.y = a.y + b.y;
         rv.z = a.z + b.z;
 
-        //Debug.Log(rv);
-
         return rv;
     }
 
@@ -38,8 +34,6 @@ public class MyVector
         rv.y = a.y - b.y;
         rv.z = a.z - b.z;
 
-        //Debug.Log(rv);
-
         return rv;
     }
 
@@ -49,8 +43,6 @@ public class MyVector
 
         rv = MathF.Sqrt(x * x + y * y + z * z);
 
-        //Debug.Log(rv);
-
         return rv;
     }
 
@@ -58,14 +50,8 @@ public class MyVector
     {
         Vector3 rv = new Vector3(x, y, z);
 
-        //rv.x = x;
-        //rv.y = y;
-        //rv.z = z;
-
         return rv;
     }
-
-    // Workshop 2
 
     public static MyVector Scalar(MyVector vector, float scalar)
     {
@@ -103,8 +89,6 @@ public class MyVector
         float rv;
 
         rv = x * x + y * y + z * z;
-
-        //Debug.Log(rv);
 
         return rv;
     }

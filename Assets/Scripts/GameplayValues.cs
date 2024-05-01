@@ -12,10 +12,12 @@ public class GamePlayValues : MonoBehaviour
     }
 
     public int PointsSpawned;
+    public int MaxPointsSpawn;
 
     public int PlayerPoints = 0;
-    public int MaxPoints;
-    public TMP_Text Points;
+    public int GameEndPoints;
+    [SerializeField] TMP_Text Points;
+
 
     public void PointIncrease()
     {
@@ -25,12 +27,12 @@ public class GamePlayValues : MonoBehaviour
 
     bool TimerStart = false;
 
-    float Time;
-    public float Minutes;
-    public float Seconds;
+    //float Time;
+    [SerializeField] float Minutes;
+    [SerializeField] float Seconds;
 
-    public TMP_Text Timer;
-    
+    [SerializeField] TMP_Text Timer;
+
 
     // Start is called before the first frame update
     void Start()
@@ -38,13 +40,13 @@ public class GamePlayValues : MonoBehaviour
         PointIncrease();
 
         TimerStart = true;
-        Time = 60; Minutes = 5; Seconds = 30;
+        //Time = 60; Minutes = 5; Seconds = 30;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (PlayerPoints >= MaxPoints)
+        if (PlayerPoints >= GameEndPoints)
         {
             Debug.Log("EndGame: Win");
         }
@@ -52,11 +54,11 @@ public class GamePlayValues : MonoBehaviour
 
         if (TimerStart)
         {
-            Time -= 0.1f;
+            /*Time -= 0.1f;
             if (Time <= 0)
             {
                 Time = 60;
-                Seconds -= 1;
+                Seconds -= UnityEngine.Time.deltaTime;
                 if (Seconds <= 0)
                 {
                     Minutes -= 1;
@@ -69,6 +71,21 @@ public class GamePlayValues : MonoBehaviour
                     {
                         Seconds = 59;
                     }
+                }
+            }*/
+
+            Seconds -= UnityEngine.Time.deltaTime;
+            if (Seconds < 0)
+            {
+                if (Minutes <= 0)
+                {
+                    TimerStart = false;
+                    Debug.Log("EndGame: Lose");
+                }
+                else
+                {
+                    Seconds += 60;
+                    Minutes -= 1;
                 }
             }
             Timer.text = "Timer: " + Minutes.ToString("00") + ":" + Seconds.ToString("00");

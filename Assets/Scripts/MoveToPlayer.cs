@@ -29,16 +29,13 @@ public class MoveToTarget : MonoBehaviour
     {
         Target = GameObject.Find("Player");
         Evader = new MyVector(Target.transform.position.x, Target.transform.position.y, Target.transform.position.z);
-        //Debug.Log("EvaderPosition: " + "X: " + Evader.x + ", Y:  " + Evader.y + ", Z: " + Evader.z);
 
         Pursuer = new MyVector(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-        //Debug.Log("PursuerPosition: " + "X: " + Pursuer.x + ", Y:  " + Pursuer.y + ", Z: " + Pursuer.z);
     }
 
     public void MoveToEvader()
     { 
         Gap = MyVector.SubtractVector(Evader, Pursuer);
-        //Debug.Log(Gap.GetMegg());
 
         if (Gap.GetMegg() >= Range)
         {

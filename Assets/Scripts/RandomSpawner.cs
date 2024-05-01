@@ -19,7 +19,7 @@ public class RandomSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GamePlayValues.instance().PointsSpawned < 6)
+        if (GamePlayValues.instance().PointsSpawned < GamePlayValues.instance().MaxPointsSpawn)
         {
             Debug.Log("Spawn Point");
             Vector3 RandomSpawnPoint = new Vector3(

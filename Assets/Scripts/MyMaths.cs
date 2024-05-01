@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class MyMaths
 {
-    //Workshop 3
-
     public static float VectorToRadians(Vector2 V)
     {
         float rv = 0.0f;

@@ -11,8 +11,11 @@ public class GamePlayValues : MonoBehaviour
         return GameObject.Find("GameMode").GetComponent<GamePlayValues>();
     }
 
+    public int PointsSpawned;
+
     public int PlayerPoints = 0;
-    [SerializeField] TMP_Text Points;
+    public int MaxPoints;
+    public TMP_Text Points;
 
     public void PointIncrease()
     {
@@ -23,10 +26,10 @@ public class GamePlayValues : MonoBehaviour
     bool TimerStart = false;
 
     float Time;
-    [SerializeField] float Minutes;
-    [SerializeField] float Seconds;
+    public float Minutes;
+    public float Seconds;
 
-    [SerializeField] TMP_Text Timer;
+    public TMP_Text Timer;
     
 
     // Start is called before the first frame update
@@ -41,6 +44,11 @@ public class GamePlayValues : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PlayerPoints >= MaxPoints)
+        {
+            Debug.Log("EndGame");
+        }
+
 
         if (TimerStart)
         {
@@ -63,7 +71,7 @@ public class GamePlayValues : MonoBehaviour
                     }
                 }
             }
-            Timer.text = "Timer: " + Minutes.ToString() + ":" + Seconds.ToString("f0");
+            Timer.text = "Timer: " + Minutes.ToString("00") + ":" + Seconds.ToString("00");
         }
     }
 }

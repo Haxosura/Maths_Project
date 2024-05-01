@@ -34,6 +34,8 @@ public class PointCollision : MonoBehaviour
 
             AddToPoints.AddPoints();
 
+            GamePlayValues.instance().PointsSpawned -= 1;
+
             DestroyCollision();
         }
     }
